@@ -1,0 +1,227 @@
+funcao inicio() {
+    inteiro cep
+    inteiro doces, salgados, bebidas,pratos
+    inteiro opcao
+    real valorD1 =0.50, valorD2=1.00, valorD3=1.50
+    real valorS1=2.00, valorS2=1.00, valorS3=3.50
+    real valorP1=15.00, valorP2=20.00, valorP3=12.00, valorP4=8.00, valorP5=8.00
+    real valorB1=4.00, valorB2=3.50, valorB3=2.50, valorB4=3.00
+    real valorfinal
+    cadeia opc, opc2
+    real somadoce= 0.0, somadoce2= 0.0,somadocetotal
+    real somasalgado= 0.0, somasalgado2=0.0, somasalgadototal
+    real somabebida= 0.0,somabebida2= 0.0, somabebidatotal
+    real somapratos= 0.0, somapratos2= 0.0, somapratostotal
+  
+    
+    escreva("=====================================\n")
+    escreva("Bem vindo ao o sistema de Fast Food\n")
+    escreva("=====================================\n")
+    escreva("======== Informe seu Cep =========\n")
+    leia(cep)
+    escreva("Temos 3 tipos opções:\n")
+    escreva(" 1- Doce\n 2- Salgados\n 3- Pratos Prontos\n 4- Bebidas\n 5- Açaí\n")
+    leia(opcao)
+    
+	    se(opcao==1){ 
+	    limpa()
+	    escreva("Os doces disponiveis são: \n 1- beijinho- R$0,50\n 2- brigadeiro- R$1,00\n 3- casadinho- R$1,50\n")
+	    escreva("Escolha sua opção \n")
+	    leia(doces)
+	        se (doces == 1){
+	            somadoce = somadoce + valorD1
+	        }
+	            senao se (doces == 2){
+	                somadoce= somadoce + valorD2
+	            }
+	                senao se (doces == 3){
+	                    somadoce= somadoce + valorD3
+	                }
+	      escreva("Você deseja adicionar mais alguma coisa? (s/n)\n")
+	      leia(opc)
+	       se(opc == "s"){
+	      escreva(" 1- Doce\n 2- Salgados\n 3- Pratos Prontos\n 4- Bebidas\n")
+	      leia(opcao)
+	    	se(opcao == 1){ 
+	    	limpa()
+	    
+	        escreva("Os doces disponiveis são: \n 1- beijinho- R$0,50\n 2- brigadeiro- R$1,00\n 3- casadinho- R$1,50\n")
+		    escreva("Escolha sua opção \n")
+		    leia(doces)
+		      se (doces == 1){
+	            somadoce2 = somadoce2 + valorD1
+	        }
+	            senao se (doces == 2){
+	                somadoce2= somadoce2 + valorD2
+	            }
+	                senao se (doces == 3){
+	                    somadoce2= somadoce2 + valorD3
+	                }
+	                limpa()
+	                escreva("========================\n")
+                    escreva("========Comanda========\n")
+                    escreva("=======================\n")
+                    escreva("\n1.................R$:", somadoce)
+                    escreva("\n1.................R$:", somadoce2)
+	                       } 
+	                        senao se(opcao == 2){
+	                            limpa()
+	                            escreva("Os salgados disponiveis são: \n 1- coxinha- R$2,00\n 2- bolinha de queijo- R$1,00\n 3- enroladinho- R$3,50\n")
+		                        escreva("Escolha sua opção \n")
+		                        leia(salgados)
+		                        			        se (salgados == 1){
+	                                                    somasalgado2 = somasalgado2 + valorS1
+	                                                     }
+	                                                     senao se (salgados == 2){
+	                                                         somasalgado2= somasalgado2 + valorS2
+	                                                    }
+	                                                            senao se (salgados == 3){
+	                                                                somasalgado2= somasalgado2 + valorS3
+	                                                             }
+	                                                             		                limpa()
+                                                                    		                escreva("========================\n")
+                                                                                            escreva("========Comanda========\n")
+                                                                                            escreva("=======================\n")
+                                                                                            escreva("\n1.................R$:", somadoce)
+                                                                                            escreva("\n1.................R$:", somasalgado2)
+		                       
+	                        }
+	                                    senao se(opcao == 3){
+	                                        limpa()
+	                                        			escreva("Os pratos disponiveis são: \n 1- bife com fritas- R$15,00\n 2- strogonoff- R$20,00\n 3- feijoada- R$12,00\n 4- porção de arroz - R$8,00\n 5- porção de fritas - R$8,00\n")
+		                                                escreva("Escolha sua opção \n")
+		                                                leia(pratos)
+		                                                			
+		                                                        se (pratos == 1){
+	                                                                 somapratos2 = somapratos2 + valorP1
+	                                                                    }
+                                                		            senao se (pratos == 2){
+                                                		                somapratos2= somapratos2 + valorP2
+                                                		            }
+                                                		                senao se (pratos == 3){
+                                                		                    somapratos2= somapratos2 + valorP3
+                                                		                }
+                                                                            senao se (pratos == 4){
+                                                                                somapratos2= somapratos2 + valorP4
+                                                                            }
+                                                                                senao se (pratos == 5){
+                                                                                    somapratos2= somapratos2 + valorP5
+                                                                                }
+                                                                                limpa()
+                                                                    		                escreva("========================\n")
+                                                                                            escreva("========Comanda========\n")
+                                                                                            escreva("=======================\n")
+                                                                                            escreva("\n1.................R$:", somadoce)
+                                                                                            escreva("\n1.................R$:", somapratos2)
+		
+	                               
+	                                    }   
+	                                        senao se (opcao == 4){
+	                                            limpa()
+	                                            			escreva("As bebidas disponiveis sao: \n 1- coca- R$4,00\n 2- guaraná- R$3,50\n 3- água 600ml- R$2,50\n 4- sao geraldo- R$3,00\n")
+		                                                    escreva("Escolha sua opção \n")
+       		                                                leia(bebidas)
+       		                                                                    se (bebidas == 1){
+                                                                		            somabebida2 = somabebida2 + valorB1
+                                                                		        }
+                                                                		            senao se (bebidas == 2){
+                                                                		                somabebida2= somabebida2 + valorB2
+                                                                		            }
+                                                                		                senao se (bebidas == 3){
+                                                                		                    somabebida2= somabebida2 + valorB3
+                                                                		                }
+                                                                		                    senao se (bebidas == 4){
+                                                                		                        somabebida2= somabebida2 + valorB4
+                                                                		                    }
+                                                                		                    
+                                                                		                        limpa()                                                                           limpa()
+                                                                    		                    escreva("========================\n")
+                                                                                                escreva("========Comanda========\n")
+                                                                                                escreva("=======================\n")
+                                                                                                escreva("\n1.................R$:", somadoce)
+                                                                                                escreva("\n1.................R$:", somabebida2)             
+	                                        }
+	                          
+	    	
+	       }
+	       senao se(opc == "n"){
+	    limpa()
+        escreva("========================\n")
+        escreva("========Comanda========\n")
+        escreva("=======================\n")
+        escreva("\n1.................R$:", somadoce)
+                                                                                         
+	       }
+
+	      
+
+	    }
+	                
+	            
+		senao se (opcao==2){
+        limpa()
+		    
+		escreva("Os salgados disponiveis são: \n 1- coxinha- R$2,00\n 2- bolinha de queijo- R$1,00\n 3- enroladinho- R$3,50\n")
+		escreva("Escolha sua opção \n")
+		leia(salgados)
+		        se (salgados == 1){
+	            somasalgado = somasalgado + valorS1
+	        }
+	            senao se (salgados == 2){
+	                somasalgado= somasalgado + valorS2
+	            }
+	                senao se (salgados == 3){
+	                    somasalgado= somasalgado + valorS3
+	                }
+
+		
+		}
+		senao se (opcao==3){
+        limpa()
+		    
+		escreva("Os pratos disponiveis são: \n 1- bife com fritas- R$15,00\n 2- strogonoff- R$20,00\n 3- feijoada- R$12,00\n 4- porção de arroz - R$8,00\n 5- porção de fritas - R$8,00\n")
+		escreva("Escolha sua opção \n")
+		leia(pratos)
+		        se (pratos == 1){
+	            somapratos = somapratos + valorP1
+	        }
+	            senao se (pratos == 2){
+	                somapratos= somapratos + valorP2
+	            }
+	                senao se (pratos == 3){
+	                    somapratos= somapratos + valorP3
+	                }
+                        senao se (pratos == 4){
+                            somapratos= somapratos + valorP4
+                        }
+                            senao se (pratos == 5){
+                                somapratos= somapratos + valorP5
+                            }
+		}
+		senao se (opcao==4){
+	    limpa()  
+		escreva("As bebidas disponiveis sao: \n 1- coca- R$4,00\n 2- guaraná- R$3,50\n 3- água 600ml- R$2,50\n 4- sao geraldo- R$3,00\n")
+		escreva("Escolha sua opção \n")
+        leia(bebidas)
+                se (bebidas == 1){
+	            somabebida = somabebida + valorB1
+	        }
+	            senao se (bebidas == 2){
+	                somabebida= somabebida + valorB2
+	            }
+	                senao se (bebidas == 3){
+	                    somabebida= somabebida + valorB3
+	                }
+	                    senao se (bebidas == 4){
+	                        somabebida= somabebida + valorB4
+	                    }
+
+		}
+            senao se(opcao == 5){
+                limpa()
+                escreva ("===============================\n")
+                escreva ("========Monte seu Pedido======\n")
+                 escreva ("===============================\n")
+                
+            }
+}
