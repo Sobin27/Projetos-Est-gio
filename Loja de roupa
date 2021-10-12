@@ -1,0 +1,67 @@
+	        escreva("Na loja temos as seguintes peças: \n")
+	        escreva(" 1-Camisa\n 2-Moletom\n 3-short\n")
+	        
+	            escreva("Digite o código da peça\n")
+	            leia(codigo)
+	            escreva("Digite a quantidade total de peças\n")
+	            leia(quantidade)
+	                se(codigo == 1){
+	                    limpa()
+	                    real camisaNike= 50.00, camisaAdidas= 30.00, camisaPuma= 35.00
+	                        escreva(" 1- Camisa Nike ---R$50,00\n 2- Camisa da Adidas ---R$30,00\n 3- Puma ---R$35,00\n")
+	                        escreva("Digite qual peça você deseja: \n")
+	                        leia(pecaCamisa)
+	                            se(pecaCamisa == 1){
+	                                valorTotal= camisaNike*quantidade
+	                            }
+	                                senao se(pecaCamisa == 2){
+	                                    valorTotal= camisaAdidas*quantidade
+	                                }
+	                                    senao se(pecaCamisa == 3){
+	                                        valorTotal= camisaPuma*quantidade
+	                                    }
+	                    
+	                }
+	                    senao se(codigo == 2){
+	                        real moletomNike= 130.00, moletomAdidas= 100.00, moletomPuma= 105.00
+	                        escreva(" 1- Moletom da Nike ---R$130,00\n 2- Moletom da Adidas ---R$100,00\n 3- Moletom da Puma ---R$ 105,00\n")
+	                        escreva("Digite qual peça voce deseja: \n")
+	                        leia(pecaMoletom)
+	                            se(pecaMoletom == 1){
+	                                valorTotal= moletomNike*quantidade
+	                            }
+	                                senao se(pecaMoletom == 2){
+	                                    valorTotal= moletomPuma*quantidade
+	                                }
+	                                    senao se(pecaMoletom == 3){
+	                                        valorTotal= moletomPuma*quantidade
+	                                    }
+	                    }
+	                        senao se(codigo == 3){
+	                            real shortNike= 40.00, shortAdidas= 30.00, shortPuma= 25.00
+	                           escreva(" 1- Short Da nike ---R$40,00\n 2- Short da Adidas ---R$30,00\n 3- Short Puma ---R$25,00\n")
+	                           escreva("Digite a opção que voce deseja: \n")
+	                           leia(pecaShort)
+	                                se (pecaShort == 1){
+	                                    valorTotal= shortNike*quantidade
+	                                }
+	                                    senao se(pecaShort == 2){
+	                                        valorTotal= shortAdidas*quantidade
+	                                    }
+	                                        senao se(pecaShort == 3){
+	                                            valorTotal= shortPuma*quantidade
+	                                        }
+	                        }
+
+	 
+	 
+	 
+	 escreva("===========================\n")
+	 escreva("========Nota físcal========\n")
+	 escreva("===========================\n")
+	 escreva(quantidade)
+	 escreva("..................")
+	 escreva("R$",valorTotal)
+
+
+}
