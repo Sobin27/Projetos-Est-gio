@@ -1,0 +1,32 @@
+programa {
+ funcao inteiro multipli(inteiro a){
+    inteiro res=0
+    inteiro b= 1
+    
+    enquanto(b<=10){
+    res = a*b
+    retorne res
+    }
+    
+    retorne res
+}
+
+funcao inicio(){
+    inteiro resultado = 0, n1=0,n2=0,b=0
+
+    escreva ("Digite um numero: ")
+    leia (n1)
+            se(n1 < 1)
+        faca {
+            escreva("Numero inválido, digite novamente: \n")
+            leia(n1)
+        }enquanto(n1<1)
+
+    
+    enquanto(n2<=10){
+    escreva("\nA tabuada do numero é: ", resultado = multipli(n1)*b)
+        n2++
+        b++
+    }
+}
+}
