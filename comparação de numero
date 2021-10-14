@@ -1,0 +1,62 @@
+programa {
+	funcao inicio() {
+		inteiro n1,n2
+		
+		
+		escreva ("Digite um numero: \n")
+		leia(n1)
+		escreva("Digite o segundo numero: \n")
+		leia(n2)
+		
+		escreva(max(n1, n2))
+	}
+	funcao inteiro max(inteiro n1, inteiro n2){
+	    se (n1>n2){
+	        escreva("O primeiro numero é maior\n")
+	            retorne n1
+	    }
+	        senao se(n2 > n1){
+	            escreva("O segundo numero é maior\n")
+	                retorne n2
+	        }
+	            senao se(n1 == n2){
+	                escreva("Numeros iguais")
+	                    retorne n1
+	            }
+	        retorne 0
+	}
+	    
+}
+-------------------------------------------------------------------------
+programa {
+	funcao inicio() {
+		inteiro a,b,c,d
+		
+		    escreva("Digite o primeiro numero: \n")
+		    leia(a)
+		    escreva("Digite o segundo numero: \n")
+		    leia(b)
+		    escreva("Digite o terceiro numero: \n")
+		    leia(c)
+		    escreva("Digite o quarto numero: \n")
+		    leia(d)
+		    
+		    escreva(max(a,b,c,d))
+	}
+	funcao inteiro max(inteiro a, inteiro b, inteiro c, inteiro d){
+	    limpa()
+	       se ((a>b) e (a>c) e (a>d)){
+	           retorne a
+	       }
+	            senao se ((b>a)e(b>c)e(b>d)){
+	                retorne b
+	            }
+	                senao se((c>a)e(c>b)e(c>d)){
+	                    retorne c
+	                }
+	                    senao se((d>a)e(d>b)e(d>c)){
+	                        retorne d
+	                    }
+	       retorne 0
+}
+}
