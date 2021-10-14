@@ -1,0 +1,34 @@
+programa {
+	funcao inicio() {
+		cadeia nome[6]
+		inteiro i=1
+		inteiro y=1
+		escreva(escrevaNome())
+	}
+	funcao cadeia escrevaNome(){
+	    		cadeia nome[6]
+		        inteiro i=1
+		        inteiro y=1
+	        enquanto (i<=5){
+		    escreva("Digite ",i, "º um nome: \n")
+		    leia(nome[i])
+		        i++
+		    }
+		    limpa()
+		         enquanto(y<=5){
+		                escreva("A lista dos seus amigos")
+		                escreva(nome[y],"\n")
+		                 y++
+		    }
+
+		escreva("================================\n")
+	    escreva("A lista inversa dos seus amigos\n") 
+            escreva(nome[5],"\n")
+            escreva(nome[4], "\n")
+            escreva(nome[3], "\n")
+            escreva(nome[2], "\n")
+            escreva(nome[1], "\n")
+		    
+		    retorne " "
+	}
+}
