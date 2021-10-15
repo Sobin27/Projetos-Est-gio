@@ -1,0 +1,540 @@
+programa {
+	funcao inicio() {
+    inteiro opcao
+    cadeia selc
+    
+    escreva("=================================\n")
+    escreva("=== Seja bem vindo a SobStory ===\n")
+    escreva("=================================\n\n\n")
+    
+    escreva("|===============================|\n")
+    escreva("|=======Escolha sua opção=======|\n")
+    escreva("|1-Cadastro/login               |\n")
+    escreva("|2-Catalogo                     |\n")
+    escreva("|3-Parcerias                    |\n")
+    escreva("|===============================|\n")
+    leia(opcao)
+        se(opcao == 1){
+            escreva(cadastro())
+        }
+            senao se(opcao == 2){
+                escreva(catalogoPreco())
+                    escreva("Você deseja comprar? (s/n) \n")
+                    leia(selc)
+                        se(selc == "s"){
+                            escreva(compra())
+                            
+                        }
+                        senao se(selc == "n"){
+                            escreva("Obrigado por Visitar o Site!")
+                        }
+            }
+                senao se(opcao == 3){
+                    escreva(parceria())
+                }
+                    senao se(opcao == 4){
+                        escreva(loginAdmin())
+                    }
+
+    
+    
+	}
+	funcao cadeia pagamento(){
+	    inteiro opcaoPag
+	    cadeia pix
+	    cadeia numCartao
+	    inteiro codSeg
+	    cadeia datVal
+	    cadeia nomeTi[30]
+	    
+	    limpa()
+	    escreva("====================================\n")
+	    escreva("====Informe a forma de pagamento====\n")
+	    escreva("==== 1- Pix ====== 2- Cartão========\n")
+	    escreva("====================================\n")
+	    leia(opcaoPag)
+	        se(opcaoPag == 1){
+	            escreva("Informe o código do seu pix pra pagamento: \n")
+	            leia(pix)
+	        }
+	            senao se(opcaoPag == 2){
+	                escreva("Informe o numero do cartão\n")
+	                leia(numCartao)
+	                escreva("Informe o código de segurança\n")
+	                leia(codSeg)
+	                escreva("Informe o nome do titular\n")
+	                leia(nomeTi[1])
+	                escreva("Informe a data de validade do cartão\n")
+	                leia(datVal)
+	            }
+	    retorne " "
+	}
+	funcao cadeia cadastro(){
+	    cadeia genero
+	    cadeia usuario[6],senha[10],email[30],datNas[20]
+	    cadeia premium
+	    cadeia opcaoCas,opcaoCas2,opcaoCliente,selc
+	   
+	    
+	        escreva("Você ja possui cadastro no site? (S/N) \n")
+	        leia(opcaoCas)
+	            se(opcaoCas == "s"){
+	                limpa()
+	                    escreva("Você é cliente premium?(s/n)\n")
+	                    leia(opcaoCliente)
+	                        se(opcaoCliente == "s"){
+	                            
+	                            escreva(loginPremium())
+	                        }
+	                          	    senao se(opcaoCliente == "n"){
+	                                    
+	                                    escreva(login())  
+	                        }   
+
+	                            }
+	               
+	                 
+	                senao se(opcaoCas == "n"){
+	                    limpa()
+	                    
+	                       escreva("Você deseja Se tornar cliente? (s/n)\n")
+	                       leia(opcaoCas2)
+	                       
+	                        se(opcaoCas2 == "s"){
+	                    
+	                    limpa()
+	                    escreva("=================================\n")
+	                    escreva("====Este é o menu de cadastro====\n")
+	                    escreva("=================================\n")
+	                    
+	                    escreva("Insira um usuário de apenas 6 digitos: \n")
+	                    leia(usuario[1])
+	                    escreva("Insira uma senha de no máximo de 10 digitos: \n")
+	                    leia(senha[1])
+	                    escreva("Insira um email para cadastro: \n")
+	                    leia(email[1])
+	                    escreva("Informe seu genero: \n")
+	                    escreva("== M-masculino == F-feminino ==\n")
+	                    leia(genero)
+	                    escreva("Informe sua Data de nascimento:\n")
+	                    leia(datNas[1])
+	                    
+	                    escreva("Você deseja se tornar Premium? (s/n)\n")
+	                    leia(premium)
+	                    
+	                        se (premium == "s"){
+	                                escreva(cadastroPremium())
+	                                escreva("Você deseja realizar uma compra? (s/n)\n")
+	                                leia(selc)
+	                                    se (selc == "s"){
+	                                        escreva(compra())
+	                                    }
+	                                        senao se(selc == "n"){
+	                                            escreva("Obrigado por se tornar membro Premium, até a volta!")
+	                                        }
+	                            
+	                        }
+	                            senao se(premium == "n"){
+                                        escreva (catalogoPrecoC())	  
+                                        escreva("Você deseja realizar uma compra? (s/n)\n")
+	                                    leia(selc)
+	                                            se (selc == "s"){
+	                                                escreva(compra())
+	                                    }
+	                                                senao se(selc == "n"){
+	                                                    escreva("Obrigado por acessar nosso catalogo, até a volta!")
+	                                        }
+	                            
+	                            }
+	                        }
+	                                senao se(opcaoCas2 == "n"){
+	                                    escreva(catalogoPreco())
+	                                        escreva("Você deseja realizar uma compra? (s/n)\n")
+	                                        leia(selc)
+	                                            se (selc == "s"){
+	                                                escreva(compra())
+	                                    }
+	                                                senao se(selc == "n"){
+	                                                    escreva("Obrigado por acessar nosso catalogo, até a volta!")
+	                                        }
+	                            }
+	                }
+	                    
+	                    
+	                
+	                retorne " "
+	}
+	funcao cadeia entrega(){
+	    inteiro cep,numCas
+	    cadeia rua[30],bairro[30],comple[30]
+	    
+	    limpa()
+	    escreva("===========================\n")
+	    escreva("======Menu de Entrega======\n")
+	    escreva("===========================\n")
+	    
+	        escreva("Digite o seu cep: \n")
+	        leia(cep)
+	        escreva("Informe sua Rua: \n")
+	        leia(rua[1])
+	        escreva("Informe seu Bairro: \n")
+	        leia(bairro[1])
+	        escreva("Informe o numero da sua casa: \n")
+	        leia(numCas)
+	        escreva("Digite o complemento: \n")
+	        leia(comple[1])
+	        
+	        retorne " "
+}
+    	funcao cadeia cadastroPremium(){
+	   inteiro escolPlano
+	   limpa()
+	        escreva("=================================\n")
+	        escreva("====Escolha seu Plano Premium====\n")
+	        escreva("=================================\n")
+	        
+	        escreva("1- Plano Premium simples ------ R$29,90\n")
+	        escreva("Informações do plano simples: Descontos exclusivo em produtos, acesso as novidades e 1 mês de Netflix de graça. \n")
+	        escreva("2- Plano Premium completo -------- R$59,99\n")
+	        escreva("Informações do plano completo: Descontos exclusivos em produtos, acesso as novidades, frete grátis para todas as compras\ne 2 meses de Netflix de graça\n")
+	        escreva("Escolha Seu plano: \n")
+	        leia(escolPlano)
+	        
+	        
+	            se(escolPlano== 1){
+	                escreva(pagamento())
+	                
+	            }
+	                senao se(escolPlano == 2){
+	                    escreva(pagamento())
+	                }
+	    retorne " "
+	}
+	funcao cadeia catalogoPreco(){
+	    limpa()
+	    escreva("==================================\n")
+	    escreva("=======Catalogo De Produtos=======\n")
+	    escreva("===================================\n\n")
+	    
+	     escreva(" 1- Camisa Nike ---R$50,00\n 2- Camisa da Adidas ---R$30,00\n 3- Camisa da Puma ---R$35,00\n")
+	     escreva(" 4- Moletom da Nike ---R$130,00\n 5- Moletom da Adidas ---R$100,00\n 6- Moletom da Puma ---R$ 105,00\n")
+	     escreva(" 8- Short Da Nike ---R$40,00\n 9- Short da Adidas ---R$30,00\n 10- Short Puma ---R$25,00\n")
+	     escreva(" 11- Tênis da Nike ---R$100,00\n 12- Tênis da Adidas ---R$90,00\n 13- Tênis da Puma ---R$95,00\n\n")
+	     retorne " "
+	}
+	funcao cadeia catalogoPrecoC(){
+	    limpa()
+	    escreva("==================================\n")
+	    escreva("=======Catalogo De Produtos=======\n")
+	    escreva("===================================\n\n")
+	    
+	     escreva(" 1- Camisa Nike ---R$45,00\n 2- Camisa da Adidas ---R$25,00\n 3- Camisa da Puma ---R$30,00\n")
+	     escreva(" 4- Moletom da Nike ---R$125,00\n 5- Moletom da Adidas ---R$95,00\n 6- Moletom da Puma ---R$ 100,00\n")
+	     escreva(" 8- Short Da Nike ---R$35,00\n 9- Short da Adidas ---R$25,00\n 10- Short Puma ---R$20,00\n")
+	     escreva(" 11- Tênis da Nike ---R$95,00\n 12- Tênis da Adidas ---R$85,00\n 13- Tênis da Puma ---R$90,00\n\n")
+	     retorne " "
+	}
+	funcao cadeia catalogoPrecoP(){
+	    limpa()
+	    escreva("==================================\n")
+	    escreva("=======Catalogo De Produtos=======\n")
+	    escreva("===================================\n\n")
+	    
+	     escreva(" 1- Camisa da Nike ---R$40,00\n 2- Camisa da Adidas ---R$20,00\n 3- Camisa da Puma ---R$25,00\n")
+	     escreva(" 4- Moletom da Nike ---R$120,00\n 5- Moletom da Adidas ---R$90,00\n 6- Moletom da Puma ---R$ 95,00\n")
+	     escreva(" 8- Short Da Nike ---R$30,00\n 9- Short da Adidas ---R$20,00\n 10- Short Puma ---R$15,00\n")
+	     escreva(" 11- Tênis da Nike ---R$90,00\n 12- Tênis da Adidas ---R$80,00\n 13- Tênis da Puma ---R$85,00\n\n")
+	     retorne " "
+	}
+	   funcao cadeia estoque(){
+	       limpa()
+	       escreva("======================\n")
+	       escreva(" Estoque de Produtos\n")
+	       escreva("======================\n\n")
+	       
+	       escreva("===== Estoque de Camisa =====\n")
+	       escreva(" Camisas da Nike ------------- 50 peças em estoque\n Camisas da Adidas ------------- 50 peças em estoque\n Camisas da Puma ------------- 50 peças em estoque\n")
+	       escreva("===== Estoque de Moletom =====\n")
+	       escreva(" Moletom da Nike ------------- 40 peças em estoque\n Moletom da Adidas ------------- 40 peças em estoque\n Moletom da Puma ------------- 40 peças em estoque\n")
+	       escreva("===== Estoque de Short =====\n")
+	       escreva(" Short da Nike ------------- 30 peças em estoque\n Short da Adidas ------------- 30 peças em estoque\n Short da Puma ------------- 30 peças em estoque\n")
+	       escreva("===== Estoque de Tênis =====\n")
+	       escreva(" Tênis da Nike ------------- 20 peças em estoque\n Tênis da Adidas ------------- 20 peças em estoque\n Short da Puma ------------- 20 peças em estoque\n\n")
+	       
+	       
+	       
+	       
+	       
+	       
+	       retorne " "
+	   }
+	   funcao cadeia parceria(){
+	       cadeia escolhaPar
+	       cadeia cnpj[30],co[30]
+	       cadeia moti[30], bene[30]
+	       limpa()
+	       escreva("|====================|\n")
+	       escreva("|Nossas pacerias são:|\n")
+	       escreva("|Netflix.            |\n")
+	       escreva("|Nike.               |\n")
+	       escreva("|Adidas.             |\n")
+	       escreva("|Puma.               |\n")
+	       escreva("|====================|\n\n")
+	       
+	       escreva("Você deseja se torna parceiro da Empresa? (s/n)\n")
+	       leia(escolhaPar)
+	                se(escolhaPar == "s"){
+	                    escreva("Digite seu cnpj: \n")
+	                    leia(cnpj[1])
+	                    escreva("Digite o Nome do seu Co: \n")
+	                    leia(co[1])
+	                    escreva("Por quais motivos você deseja se afiliar a esta empresa? \n")
+	                    leia(moti[1])
+	                    escreva("Quais os beneficios para ambos? \n")
+	                    leia(bene[1])
+	                }
+	                    senao se(escolhaPar == "n"){
+	                        escreva("Obrigado pela atenção!")
+	                    }
+	       retorne " "
+	   }
+	   funcao cadeia financeiro(){
+	       inteiro montante= 100000
+	       inteiro Bnike= 30, Mnike= 100, Snike=20,Tnike=75
+	       inteiro Badidas= 20, Madidas= 70, Sadidas= 10, Tadidas= 75
+	       inteiro Bpuma= 20, Mpuma=70, Spuma= 10, Tpuma= 75
+	       inteiro BnumN,BnumA,BnumP
+	       inteiro MnumN,MnumA,MnumP
+	       inteiro SnumN,SnumA,SnumP
+	       inteiro TnumN,TnumA,TnumP
+	       inteiro resultadoB,resultadoM,resultadoS,resultadoT
+	       
+	       escreva("=====================================================\n")
+	       escreva("Digite quantas peças de blusas da Nike compradas: \n")
+	       leia(BnumN)
+	       escreva("Digite quantas peças de blusas da Adidas compradas: \n")
+	       leia(BnumA)
+	       escreva("Digite quantas peças de blusas da Puma compradas: \n")
+	       leia(BnumP)
+	       
+	       
+	       resultadoB=(Bnike*BnumN)+(Badidas*BnumA)+(Bpuma+BnumP)
+	       
+	       escreva("====================================================\n")
+	       escreva("Digite quantas peças de moletons da Nike compradas: \n")
+	       leia(MnumN)
+	       escreva("Digite quantas peças de moletons da Adidas compradas: \n")
+	       leia(MnumA)
+	       escreva("Digite quantas peças de moletons da Puma compradas: \n")
+	       leia(MnumP)
+	       
+	       
+	       resultadoM=(Mnike*MnumN)+(Madidas*MnumA)+(Mpuma+MnumP)
+	       
+	       escreva("=====================================================\n")
+	       escreva("Digite quantas peças de Shorts da Nike compradas: \n")
+	       leia(SnumN)
+	       escreva("Digite quantas peças de moletons da Adidas compradas: \n")
+	       leia(SnumA)
+	       escreva("Digite quantas peças de moletons da Puma compradas: \n")
+	       leia(SnumP)
+	       
+	       
+	       resultadoS=(Snike*SnumN)+(Sadidas*SnumA)+(Spuma+SnumP)
+	       
+	       escreva("=====================================================\n")
+	       escreva("Digite quantas peças de Tênis da Nike compradas: \n")
+	       leia(TnumN)
+	       escreva("Digite quantas peças de Tênis da Adidas compradas: \n")
+	       leia(TnumA)
+	       escreva("Digite quantas peças de Tênis da Puma compradas: \n")
+	       leia(TnumP)
+	       
+	       
+	       resultadoT=(Tnike*TnumN)+(Tadidas*TnumA)+(Tpuma+TnumP)
+	       
+	       
+	       montante= montante - resultadoB - resultadoM - resultadoS - resultadoT
+	       
+	       escreva("O valor do seu montante apos a compra dos produtos foi de: ",montante)
+	       
+	       retorne " "
+	   }
+	   funcao cadeia login(){
+	       cadeia user, senha
+	            
+	            escreva("Digite seu user: \n")
+	            leia(user)
+	            escreva("Digite sua senha: \n")
+	            leia(senha)
+	                se((user == "sob")e(senha == "asp")){
+	                    
+	                    escreva(catalogoPrecoC())
+	                }
+	                retorne " "
+	   }
+	   funcao cadeia loginPremium(){
+	       cadeia user, senha
+	       
+	            escreva("Digite seu user: \n")
+	            leia(user)
+	            escreva("Digite sua senha: \n")
+	            leia(senha)
+	            	  se((user == "jose")e(senha == "asp200500")){
+	                    
+	                    escreva(catalogoPrecoP())
+	                }
+	                retorne " "
+	   }
+	   funcao cadeia loginAdmin(){
+	       cadeia user, senha
+	       inteiro a
+	            escreva("Digite seu user: \n")
+	            leia(user)
+	            escreva("Digite sua senha: \n")
+	            leia(senha)
+	            
+	                se((user == "cavalcante")e(senha == "soblindo")){
+	                    
+	                    limpa()
+	                    escreva("==================================\n")
+	                    escreva("======== Opções de busca ========\n")
+	                    escreva(" 1- Estoque 2- SetorFinanceiroz\n")
+	                    escreva("==================================\n")
+	                    leia(a)
+	                        se(a == 1){
+	                            escreva(estoque())
+	                        }
+	                            senao se(a == 2){
+	                                escreva(financeiro())
+	                            }
+	                }
+	                retorne " "
+	   }
+	   funcao cadeia compra(){
+	       inteiro selcCompra
+	       inteiro selcB,selcM,selcS,selcT
+	       
+	       limpa()
+	       escreva("|=============================|\n")
+	       escreva("|==Selecione o estilo de roupa|\n")
+	       escreva("| 1- Blusa                    |\n")
+	       escreva("| 2- Moletom                  |\n")
+	       escreva("| 3- Short                    |\n")
+	       escreva("| 4- Tênis                    |\n")
+	       escreva("|=============================|\n")
+	       leia(selcCompra)
+	            se(selcCompra == 1){
+	                 escreva(" 1- Camisa Nike ---R$50,00\n 2- Camisa da Adidas ---R$30,00\n 3- Camisa da Puma ---R$35,00\n")
+	                 escreva("Digite sua opção: \n")
+	                 leia(selcB)
+	                    se(selcB == 1){
+	                        escreva(pagamento())
+	                        escreva(entrega())
+	                        escreva("Obrigado por comprar")
+	                    }
+	                        senao se(selcB == 2){
+	                            escreva(pagamento())
+	                            escreva(entrega())
+	                            escreva("Obrigado por comprar")
+	                        }
+	                            senao se(selcB == 3){
+	                                escreva(pagamento())
+	                                escreva(entrega())
+	                                escreva("Obrigado por comprar")
+	                            }
+	                                senao se(selcB == 4){
+	                                    escreva(pagamento())
+	                                    escreva(entrega())
+	                                    escreva("Obrigado por comprar")
+	                                }
+	                            
+	                        }
+	           senao se (selcCompra == 2){
+	               escreva(" 1- Moletom da Nike ---R$130,00\n 2- Moletom da Adidas ---R$100,00\n 3- Moletom da Puma ---R$ 105,00\n")
+	               escreva("Digite sua opção: \n")
+	               leia(selcM)
+	               	   se(selcM == 1){
+	                        escreva(pagamento())
+	                        escreva(entrega())
+	                        escreva("Obrigado por comprar")
+	                    }
+	                        senao se(selcM == 2){
+	                            escreva(pagamento())
+	                            escreva(entrega())
+	                            escreva("Obrigado por comprar")
+	                        }
+	                            senao se(selcM == 3){
+	                                escreva(pagamento())
+	                                escreva(entrega())
+	                                escreva("Obrigado por comprar")
+	                            }
+	                                senao se(selcM == 4){
+	                                    escreva(pagamento())
+	                                    escreva(entrega())
+	                                    escreva("Obrigado por comprar")
+	                                }
+	               
+	           }
+	           senao se(selcCompra == 3){
+	                 escreva(" 1- Short Da Nike ---R$40,00\n 2- Short da Adidas ---R$30,00\n 3- Short Puma ---R$25,00\n")
+	                 escreva("Digite sua opção: \n")
+	                 leia(selcS)
+	                 
+	           	        se(selcS == 1){
+	                        escreva(pagamento())
+	                        escreva(entrega())
+	                        escreva("Obrigado por comprar")
+	                    }
+	                        senao se(selcS == 2){
+	                            escreva(pagamento())
+	                            escreva(entrega())
+	                            escreva("Obrigado por comprar")
+	                        }
+	                            senao se(selcS == 3){
+	                                escreva(pagamento())
+	                                escreva(entrega())
+	                                escreva("Obrigado por comprar")
+	                            }
+	                                senao se(selcS == 4){
+	                                    escreva(pagamento())
+	                                    escreva(entrega())
+	                                    escreva("Obrigado por comprar")
+	                                }
+	           }
+	           senao se(selcCompra == 4){
+	                escreva(" 1- Tênis da Nike ---R$100,00\n 2- Tênis da Adidas ---R$90,00\n 3- Tênis da Puma ---R$95,00\n\n")
+	                escreva("Digite sua opção: \n")
+	                leia(selcT)
+	                	  se(selcT == 1){
+	                        escreva(pagamento())
+	                        escreva(entrega())
+	                        escreva("Obrigado por comprar")
+	                    }
+	                        senao se(selcT == 2){
+	                            escreva(pagamento())
+	                            escreva(entrega())
+	                            escreva("Obrigado por comprar")
+	                        }
+	                            senao se(selcT == 3){
+	                                escreva(pagamento())
+	                                escreva(entrega())
+	                                escreva("Obrigado por comprar")
+	                            }
+	                                senao se(selcT == 4){
+	                                    escreva(pagamento())
+	                                    escreva(entrega())
+	                                    escreva("Obrigado por comprar")
+	                                }
+	           }
+	               retorne " "  
+	           }
+	           }
+	                      
+	            
+	       
+	   
+	
+	
+
+	    
