@@ -1,2 +1,4 @@
 # Projetos-Estágio-Portugol
-Aqui vão estar todos os meus projetos do Estágio
+
+Este repositório contem todos os arquivos de estudo sobre lógica de programação que tive enquanto estagiava na empresa SouEnergy
+
